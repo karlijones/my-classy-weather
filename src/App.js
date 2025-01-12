@@ -19,7 +19,7 @@ class App extends React.Component {
         value={this.state.location}
         onChange={(e) => this.setState({ location: e.target.value })}/>
       </div>
-      <button>Get Weather</button>
+      <button onClick={this.fetchWeather}>Get Weather</button>
     </div>
   }
 }
