@@ -9,7 +9,9 @@ class Counter extends React.Component {
   }
 
   handleDecrement() {
-    console.log(this)
+    this.setState((curState) => {
+      return {count: curState.count + 1};
+    });
   }
 
  render() {
