@@ -6,6 +6,11 @@ class App extends React.Component {
     this.state = { location: "lisbon"};
   }
 
+  fetchWeather() {
+    console.log("Loading data...");
+    console.log(this);
+  }
+
   render() {
     return <div className='app'>
       <h1>Classy Weather</h1>
