@@ -97,3 +97,12 @@ class App extends React.Component {
 }
 
 export default App;
+
+class Weather extends React.Component {
+  render() {
+    return (<div>
+      <h2>Weather</h2>
+    </div>
+    );
+  }
+}
