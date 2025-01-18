@@ -104,11 +104,26 @@ export default App;
 
 class Weather extends React.Component {
   render() {
-    console.log(this.props);
+    const {
+      temperature_2m_max: max,
+      tempurature_2m_min: min,
+      time: dates,
+      weathercode: codes,
+    } = this.props.weather;
 
-    return (<div>
-      <h2>Weather</h2>
+    return (
+    <div>
+      <h2>Weather {this.props.location}</h2>
+      <ul className="weather">
+        {dates.map(date=> <Day />)}
+        </ul>
     </div>
     );
+  }
+}
+
+class Day extends React.Component {
+  render() {
+    return <li>Day</li>;
   }
 }
