@@ -135,7 +135,8 @@ class Day extends React.Component {
     const { date, max, min, code } = this.props;
 
     return 
-    <li>
+    <li className="day">
+      <span>{code}</span>
       <p>{date}</p>
       <p>
         {min}&deg; &mdash;{max}&deg;
