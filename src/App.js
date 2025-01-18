@@ -95,7 +95,7 @@ class App extends React.Component {
 
       {this.state.weather.weathercode && <Weather 
       weather={this.state.weather} 
-      location={this.state.location} />}
+      location={this.state.displaylocation} />}
     </div>
   }
 }
@@ -104,6 +104,8 @@ export default App;
 
 class Weather extends React.Component {
   render() {
+    console.log(this.props);
+
     return (<div>
       <h2>Weather</h2>
     </div>
