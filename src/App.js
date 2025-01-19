@@ -136,15 +136,21 @@ class Day extends React.Component {
   render() {
     const { date, max, min, code, isToday } = this.props;
 
-    return (
-    <li className="day">
-      <span>{getWeatherIcon(code)}</span>
-      <p>{isToday ? "Today" : formatDay(date)}</p>
-      <p>
-        {Math.floor(min)}&deg; &mdash; <strong>{Math.ceil
-        (max)}&deg;</strong>
-      </p>
-    </li>
-    );
+    // Check if the required props are initialized
+    if (date && max !== undefined && min !== undefined && code) {
+      return (
+        <li className="day">
+          <span>{getWeatherIcon(code)}</span>
+          <p>{isToday ? "Today" : formatDay(date)}</p>
+          <p>
+            {Math.floor(min)}&deg; &mdash; <strong>{Math.ceil(max)}&deg;</strong>
+          </p>
+        </li>
+      );
+    } else {
+      // Handle the case where props are not properly initialized
+      console.error('Day component props are not properly initialized', { date, max, min, code });
+      return null; // or return a fallback UI
+    }
   }
 }
