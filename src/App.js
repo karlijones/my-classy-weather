@@ -80,7 +80,7 @@ class App extends React.Component {
   }
 
   render() {
-    return <div className='app'>
+    return (<div className='app'>
       <h1>Classy Weather</h1>
       <div>
         <input type="text" 
@@ -97,6 +97,7 @@ class App extends React.Component {
       weather={this.state.weather} 
       location={this.state.displaylocation} />}
     </div>
+    );
   }
 }
 
