@@ -81,8 +81,17 @@ class App extends React.Component {
     this.setState({ location: e.target.value })}
 
     // useEffect []
+    // called on initial render
     componentDidMount() {
         this.fetchWeather();
+    }
+
+    // useEffect [location]
+    // called on re-render
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.location !== this.state.location) {
+            this.fetchWeather();
+        }
     }
 
   render() {
