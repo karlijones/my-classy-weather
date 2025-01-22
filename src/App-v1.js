@@ -83,7 +83,9 @@ class App extends React.Component {
     // useEffect []
     // called on initial render
     componentDidMount() {
-        this.fetchWeather();
+        //this.fetchWeather();
+
+        this.setState({ location: localStorage.getItem('location') || ""});
     }
 
     // useEffect [location]
